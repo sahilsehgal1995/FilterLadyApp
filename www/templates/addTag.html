@@ -1,0 +1,59 @@
+<ion-view view-title="Tags">
+  <ion-pane has-header="true" style="background-image:url('img/white-wood.jpg');"> 
+
+<ion-tabs class="tabs-top tabs-dark">
+
+  <ion-tab title="My Tags">
+   <ion-view>
+   <ion-content overflow-scroll="true">
+   <ion-list>
+        <ion-item ng-repeat="item in tags" class="item item-text-wrap">
+          <div ng-class="isItemShown(item) ? 'item-expand active' : 'item-expand inactive'">
+            <button class="button dark" style="">Persian Tiles <i class="ion-close-circled"></i> </button>
+            <p>{{ item.text }}</p>
+          </div>
+          <div ng-click="toggleItem(item)" class="expand-item">
+            <i ng-class="isItemShown(item) ? 'ion-ios-minus-outline' : 'ion-ios-plus-outline'"></i>
+            {{ isGroupShown(item) ? 'Less' : 'More' }}
+          </div>
+        </ion-item>
+      </ion-list>
+    <button class="button dark" style="">Persian Tiles <i class="ion-close-circled"></i> </button>
+    <button class="button dark" style="">Persian <i class="ion-close-circled"></i> </button>
+    <button class="button dark" style="">American Tiles <i class="ion-close-circled"></i> </button>
+    <button class="button dark" style="">Chinese <i class="ion-close-circled"></i> </button>
+    <button class="button dark" style="">Indian <i class="ion-close-circled"></i> </button>
+   </ion-content>
+   </ion-view>
+  </ion-tab>
+
+  
+  <ion-tab title="Add Tag">
+    <ion-view>
+    <ion-content overflow-scroll="true">
+      <div class="bar bar-header bar-dark item-input-inset">
+	  <label class="item-input-wrapper">
+	    <i class="icon ion-ios-search placeholder-icon"></i>
+	    <input type="search" placeholder="Search">
+	  </label>
+	  <button class="button button-clear">
+	    Cancel
+	  </button>
+      </div>
+    </ion-content>
+    </ion-view>
+  </ion-tab>
+  
+  <ion-tab title="Popular Tags">
+    <ion-view>
+    <ion-content overflow-scroll="true">
+      <h1>helo </h1> 
+    </ion-content>
+    </ion-view>
+  </ion-tab>
+
+</ion-tabs>
+  
+  </ion-pane>
+     
+</ion-view>

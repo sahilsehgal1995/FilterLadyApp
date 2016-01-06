@@ -1,0 +1,98 @@
+<ion-side-menus enable-menu-with-back-views="true">
+  <ion-side-menu-content>
+    <ion-nav-bar class="bar-dark">
+      <ion-nav-buttons side="left">
+        <button class="button button-icon ion-navicon" menu-toggle="left">
+        </button>
+      </ion-nav-buttons>
+      <ion-nav-back-button class="button-clear">
+<i class="ion-arrow-left-c"></i>Back</ion-nav-back-button>
+
+      <ion-nav-buttons side="right">
+        <button class="button button-icon button-clear ion-ios-home" ui-sref="app.home"></button>
+        <button class="button button-icon button-clear ion-person" ui-sref="app.myprofile">
+        </button>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-nav-view name="menuContent"></ion-nav-view>
+    <ion-footer-bar align-title="center" class="bar-dark">
+  <h1 class="title" ui-sref="app.productregister">Register your Product!</h1>
+</ion-footer-bar>
+  </ion-side-menu-content>
+
+  <ion-side-menu side="left">
+    <ion-content>
+	<a ui-sref="app.myprofile" menu-close>
+	<div class="item-image">
+	  <img src="img/user.jpg" style="opacity: 0.4;">
+	</div>
+	<div style="transform:translateY(-60px);" class="dark">
+	  <font size=5><b><u>&nbsp;Pranav Lahoty</u></b></font><br>
+	  <div class="row">
+	    <div class="col">
+	    <font size=4><b>&nbsp;(Roorkee) </b></font>
+	    </div>
+	    <div class="col col-offset-20">
+	    <button class="button-dark assertive">Change</button>
+	    </div>
+	</div>
+	</a>
+      <div menu-close class="list">
+        <div class="item item-divider">
+        </div>
+        <a class="item item-icon-left" ui-sref="app.home">
+	<i class="icon ion-home"></i>
+	Home
+        </a>
+        <a class="item item-icon-left">
+	<i class="icon ion-iphone"></i>
+	MicroSite
+        </a>
+        <a class="item item-icon-left">
+	<i class="icon ion-log-in"></i>
+	Update Profile
+        </a>
+        <a class="item item-icon-left" ui-sref="app.hotdeals">
+	<i class="icon ion-ios-flame"></i>
+	Hot Deals
+        </a>
+        <div class="item item-divider">
+        </div>
+        <a class="item item-icon-left" ui-sref="app.settings">
+	<i class="icon ion-gear-a"></i>
+	Settings
+        </a>
+        <a class="item item-icon-left">
+	<i class="icon ion-ios-compose"></i>
+	Blogs
+        </a>
+        <a class="item item-icon-left">
+	<i class="icon ion-android-share-alt"></i>
+	Share
+        </a>
+        <a class="item item-icon-left">
+	<i class="icon ion-ios-people"></i>
+	Contact Us
+        </a>
+        <a class="item item-icon-left" href="#/home">
+	<i class="icon ion-ios-star"></i>
+	Feedback
+        </a>
+        <a class="item item-icon-left" href="#/home">
+	<i class="icon ion-android-exit"></i>
+	Log out
+        </a>
+        <a class="item item-icon-left">
+	<i class="icon ion-help-circled"></i>
+	FAQ
+        </a>
+        <a class="item item-icon-left">
+	<i class="icon ion-android-star-half"></i>
+	Rate Us
+        </a>
+      </div>
+      
+      
+    </ion-content>
+  </ion-side-menu>
+</ion-side-menus>

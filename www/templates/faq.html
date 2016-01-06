@@ -1,0 +1,28 @@
+<ion-view view-title="FAQ">
+  <ion-content>
+    <div class="button-dark list">
+    <label class="item item-input item-select">
+	<div class="input-label">
+	  FAQ Category
+	</div>
+	<select ng-model='category.category' ng-change='changeSelection()' placeholder="Category">
+	  <option>General</option>
+	  <option>Lender</option>
+	  <option>Borrower</option>
+	</select>
+      </label>
+    </div>
+      <ion-list>
+        <ion-item ng-repeat="item in generalfaq" class="item item-text-wrap">
+          <div ng-class="isItemShown(item) ? 'item-expand active' : 'item-expand inactive'">
+            <h2>{{ item.title }}</h2>
+            <p>{{ item.text }}</p>
+          </div>
+          <div ng-click="toggleItem(item)" class="expand-item">
+            <i ng-class="isItemShown(item) ? 'ion-ios-minus-outline' : 'ion-ios-plus-outline'"></i>
+            {{ isGroupShown(item) ? 'Less' : 'More' }}
+          </div>
+        </ion-item>
+      </ion-list>
+  </ion-content>
+</ion-view>

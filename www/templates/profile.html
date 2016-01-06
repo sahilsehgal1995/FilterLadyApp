@@ -1,0 +1,74 @@
+<ion-view view-title="My Profile">
+  <ion-content has-header="true" overflow-scroll=true style="background-image:url('img/white-wood.jpg');"> 
+    
+    <div class="item-image">
+    <img src="img/user.jpg">
+    
+    </div>
+    <button class="assertive col-offset-80" style="transform: translate(0px,-30px);"><i class="ion-edit"></i> Edit</button>
+    <div class="card" style="transform: translate(0px,-20px);">
+      <div class="row item item-divider dark">
+	<div class="col">
+	    <b>About:</b>
+	</div>
+	<div class="col" ng-click="aboutEditbutton()">
+	  <button class="balanced col-offset-75" ng-hide=aboutEdit><i class="ion-checkmark"></i></button>
+ 	  <button class="assertive col-offset-75" ng-show=aboutEdit><i class="ion-edit"></i></button>
+	</div>
+      </div>
+      <div class="item item-text-wrap">
+	<form ng-model="form1">
+                <div class="list">
+		    <label class="item item-input">
+		      <span class="input-label">Name</span>
+		      <input type="text" placeholder="Pranav Lahoty" value="Pranav Lahoty" ng-disabled=aboutEdit>
+		    </label>
+		    <label class="item item-input">
+		      <span class="input-label">Company Name</span>
+		      <input type="text" placeholder="FilterLady Pvt. Ltd" value="FilterLady Pvt. Ltd" ng-disabled=aboutEdit>
+		    </label>
+		    <label class="item item-input">
+		      <span class="input-label">Location</span>
+		      <input type="text" placeholder="Roorkee" value="Roorkee" ng-disabled=aboutEdit>
+		    </label>
+		 </div>
+         </form>
+      </div>
+    </div>
+    <div class="card" style="transform: translate(0px,-20px);">
+      <div class="row item item-divider dark">
+	<div class="col">
+	    <b>Contact Details:</b>
+	</div>
+	<div class="col" ng-click="contactEditbutton()">
+	  <button class="balanced col-offset-75" ng-hide=contactEdit><i class="ion-checkmark"></i></button>
+ 	  <button class="assertive col-offset-75" ng-show=contactEdit><i class="ion-edit"></i></button>
+	</div>
+      </div>
+      <div class="item item-text-wrap">
+	<form ng-model="form1">
+                <div class="list">
+		    <label class="item item-input">
+		      <span class="input-label">Mobile </span>
+		      <input type="number" placeholder="9780008628" value="9780008628" ng-disabled=contactEdit>
+		    </label>
+		    <label class="item item-input">
+		      <span class="input-label">Email ID *</span>
+		      <input type="email" placeholder="example@company.com" value="example@company.com" ng-disabled=contactEdit>
+		    </label>
+		    <label class="item item-input">
+		      <span class="input-label">Address</span>
+		      <input type="text" placeholder="121 Sector 25, Chandigarh" value="121 Sector 25, Chandigarh" ng-disabled=contactEdit>
+		    </label>
+		    <label class="item item-input">
+		      <span class="input-label">Website</span>
+		      <input type="text" placeholder="www.company.com" value="www.company.com" ng-disabled=contactEdit>
+		    </label>
+		 </div>
+         </form>
+      </div>
+    </div>
+  </ion-content>
+     
+</ion-view>
+

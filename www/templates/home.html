@@ -1,0 +1,121 @@
+<ion-view view-title="Home">
+  <ion-content has-header="true" style="background-image:url('img/white-wood.jpg');"> 
+
+<br>
+  <div class="item item-divider">
+    <a class="button button-full button-large button-balanced" ng-click="expandList()">
+    <div class="row">
+    <div class="col">
+    <b>Add Category</b>
+    </div>
+    <div class="col col-offset-10">
+    <i class="icon icon-right ion-plus-circled" ng-hide="!Expanded"></i>
+    <i class="icon icon-right ion-minus-circled" ng-hide="Expanded"></i>
+    </div>
+    </div>
+    </a>
+
+    <a class="button button-full button-large button-default" ng-hide="Expanded" ng-controller="popoverController" ng-click="popit($event, 'rawMaterial.html')">
+      <div class="row">
+	  <div class="col">
+	    <b>Raw Material</b>
+	  </div>
+	  <div class="col col-offset-10">
+	    <i class="icon ion-chevron-right"></i>
+	  </div>
+      </div>
+    </a>
+    
+    <a class="button button-full button-large button-default" ng-hide="Expanded" ng-controller="popoverController" ng-click="popit($event, 'ServiceProvider.html')">
+      <div class="row">
+	  <div class="col">
+	    <b>Service Prodvider</b>
+	  </div>
+	  <div class="col col-offset-10">
+	    <i class="icon ion-chevron-right"></i>
+	  </div>
+      </div>
+    </a>
+    
+    <a class="button button-full button-large button-default" ng-hide="Expanded" ng-controller="popoverController" ng-click="popit($event, 'FinishProducts.html')">
+      <div class="row">
+	  <div class="col">
+	    <b>Finish Material</b>
+	  </div>
+	  <div class="col col-offset-10">
+	    <i class="icon ion-chevron-right"></i>
+	  </div>
+      </div>
+    </a>
+    
+  </div>
+  <div class="item item-divider">
+  <a class="button button-full button-large button-balanced" ui-sref="app.addTag">
+    <div class="row">
+    <div class="col">
+    <b>Add Tag</b>
+    </div>
+    <div class="col col-offset-10">
+    <i class="icon icon-right ion-plus-circled"></i>
+    </div>
+    </div>
+    </a>
+  <ion-slide-box on-slide-changed="slideHasChanged($index)" auto-play="true" does-continue="true" slide-interval="2000">
+		    <ion-slide>
+ 		      <img ng-src="img/hotdeals1.jpg" style="height:275px; width:100%;"> 
+		    </ion-slide>
+		    <ion-slide>
+ 		      <img ng-src="img/hotdeals2.jpg" style="height:275px; width:100%;"> 
+		    </ion-slide>
+		    <ion-slide>
+ 		      <img ng-src="img/hotdeals3.jpg" style="height:275px; width:100%;"> 
+		    </ion-slide>
+		</ion-slide-box>
+  </div>
+  
+  </ion-content>
+     
+</ion-view>
+
+<script id="rawMaterial.html" type="text/ng-template">
+  <ion-popover-view style="height:19%; width:80%;">
+  <ion-content>
+  <div class="item" ng-click="optionClicked('Building Material')">
+    <b>1. Building Material</b>
+  </div>
+  <div class="item" ng-click="optionClicked('Timber and Glass')">
+    <b>2. Timber and Glass</b>
+  </div>
+  </ion-content>
+  </ion-popover-view>
+</script>
+<script id="ServiceProvider.html" type="text/ng-template">
+  <ion-popover-view style="height:25%; width:80%;">
+  <ion-content>
+  <div class="item" ng-click="optionClicked('Architects and Contractors')">
+    <b>1. Architects and Contractors</b>
+  </div>
+  <div class="item" ng-click="optionClicked('Interior designers and Landscapers')">
+    <b>2. Interior designers and Landscapers</b>
+  </div>
+  <div class="item" ng-click="optionClicked('Other service providers')">
+    <b>3. Other service providers</b>
+  </div>
+  </ion-content>
+  </ion-popover-view>
+</script>
+<script id="FinishProducts.html" type="text/ng-template">
+  <ion-popover-view style="height:25%; width:80%;">
+  <ion-content>
+  <div class="item" ng-click="optionClicked('Kitchen and bathroom')">
+    <b>1. Kitchen and bathroom</b>
+  </div>
+  <div class="item" ng-click="optionClicked('Interior designers and Landscapers')">
+    <b>2. Home Décor</b>
+  </div>
+  <div class="item" ng-click="optionClicked('Electrical Fittings and tools')">
+    <b>3. Electrical Fittings and tools</b>
+  </div>
+  </ion-content>
+  </ion-popover-view>
+</script>

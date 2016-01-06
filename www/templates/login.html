@@ -1,0 +1,20 @@
+<ion-view view-title="Login">
+  <ion-content has-header="true" style="background-image:url('img/white-wood.jpg');"> 
+       <form>
+                <div class="list">
+                    <label class="item item-input">
+                        <span class="input-label">Email Address</span>
+                        <input type="email" ng-model="user.email">
+                    </label>
+                    <label class="item item-input">
+                        <span class="input-label">Password</span>
+                        <input type="password" ng-model="user.password">
+                    </label>
+                    <label class="item">
+                        <button class="button button-block button-dark" ng-click="loginbutton()" ng-disabled="!user.email || !user.password">Log in</button>
+                    </label>
+                </div>
+            </form>
+      </ion-content>
+</ion-view>
+
