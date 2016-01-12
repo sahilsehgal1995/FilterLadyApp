@@ -166,9 +166,7 @@ angular.module('Data.factory', [])
 
 .factory('AuthFactory', ['LSFactory', function(LSFactory){
   var userKey = 'user';
-  var cidKey ='cid';
-  var emailKey = 'email';
-  var verificationKey = 'verification';
+  var categoryKey = 'category';
   
   var AuthAPI = {
     
@@ -180,6 +178,14 @@ angular.module('Data.factory', [])
       return this.getVerification() === 'Verified' ? true: false;
     },
     
+    setCategory: function(category){
+      return LSFactory.set(categoryKey, category);
+    },
+    
+    getCategory: function(){
+      return LSFactory.get(categoryKey);
+    },
+    
     setUser: function(user){
       return LSFactory.set(userKey, user);
     },
@@ -188,35 +194,10 @@ angular.module('Data.factory', [])
       return LSFactory.get(userKey);
     },
     
-    getEmail: function(){
-      return LSFactory.get(emailKey);
-    },
-    
-    setEmail: function(email){
-      return LSFactory.set(emailKey, email);
-    },
-    
-    getCid: function(){
-      return LSFactory.get(cidKey);
-    },
-    
-    setCid: function(cid){
-      return LSFactory.set(cidKey, cid);
-    },
-    
-    getVerification: function(){
-      return LSFactory.get(verificationKey);
-    },
-    
-    setVerification: function(verification){
-      return LSFactory.set(verificationKey, verification);
-    },
     
     deleteAuth: function(){
       LSFactory.delete(userKey);
-      LSFactory.delete(cidKey);
-      LSFactory.delete(emailKey);
-      LSFactory.delete(verificationKey);
+      LSFactory.delete(categoryKey);
     }
   };
   

@@ -1,0 +1,109 @@
+<ion-view view-title="Tags">
+  <ion-pane has-header="true" style="background-image:url('img/white-wood.jpg');"> 
+
+<ion-tabs class="tabs-top tabs-dark">
+
+  <ion-tab title="Overview">
+   <ion-view>
+   <ion-content overflow-scroll="true">
+  <div class="item-image">
+    <img src="img/user.jpg">
+    
+    </div>
+    <button class="assertive col-offset-80" style="transform: translate(0px,-30px);"><i class="ion-edit"></i> Edit</button>
+    <div class="card" style="transform: translate(0px,-20px);">
+      <div class="row item item-divider dark">
+	<div class="col">
+	    <b>About:</b>
+	</div>
+	<div class="col" ng-click="aboutEditbutton()">
+	  <button class="balanced col-offset-75" ng-hide=aboutEdit><i class="ion-checkmark"></i></button>
+ 	  <button class="assertive col-offset-75" ng-show=aboutEdit><i class="ion-edit"></i></button>
+	</div>
+      </div>
+      <div class="item item-text-wrap">
+	<form ng-model="form1">
+                <div class="list">
+		    <label class="item item-input">
+		      <span class="input-label">Name</span>
+		      <input type="text" placeholder="Pranav Lahoty" value="Pranav Lahoty" ng-disabled=aboutEdit>
+		    </label>
+		    <label class="item item-input">
+		      <span class="input-label">Company Name</span>
+		      <input type="text" placeholder="FilterLady Pvt. Ltd" value="FilterLady Pvt. Ltd" ng-disabled=aboutEdit>
+		    </label>
+		    <label class="item item-input">
+		      <span class="input-label">Location</span>
+		      <input type="text" placeholder="Roorkee" value="Roorkee" ng-disabled=aboutEdit>
+		    </label>
+		 </div>
+         </form>
+      </div>
+    </div>
+    <div class="card" style="transform: translate(0px,-20px);">
+      <div class="row item item-divider dark">
+	<div class="col">
+	    <b>Contact Details:</b>
+	</div>
+	<div class="col" ng-click="contactEditbutton()">
+	  <button class="balanced col-offset-75" ng-hide=contactEdit><i class="ion-checkmark"></i></button>
+ 	  <button class="assertive col-offset-75" ng-show=contactEdit><i class="ion-edit"></i></button>
+	</div>
+      </div>
+      <div class="item item-text-wrap">
+	<form ng-model="form1">
+                <div class="list">
+		    <label class="item item-input">
+		      <span class="input-label">Mobile </span>
+		      <input type="number" placeholder="9780008628" value="9780008628" ng-disabled=contactEdit>
+		    </label>
+		    <label class="item item-input">
+		      <span class="input-label">Email ID *</span>
+		      <input type="email" placeholder="example@company.com" value="example@company.com" ng-disabled=contactEdit>
+		    </label>
+		    <label class="item item-input">
+		      <span class="input-label">Address</span>
+		      <input type="text" placeholder="121 Sector 25, Chandigarh" value="121 Sector 25, Chandigarh" ng-disabled=contactEdit>
+		    </label>
+		    <label class="item item-input">
+		      <span class="input-label">Website</span>
+		      <input type="text" placeholder="www.company.com" value="www.company.com" ng-disabled=contactEdit>
+		    </label>
+		 </div>
+         </form>
+      </div>
+    </div>
+   </ion-content>
+   </ion-view>
+  </ion-tab>
+
+  
+  <ion-tab title="My Products">
+    <ion-view>
+    <ion-content overflow-scroll="true">
+      <div class="bar bar-header bar-dark item-input-inset">
+	  <label class="item-input-wrapper">
+	    <i class="icon ion-ios-search placeholder-icon"></i>
+	    <input type="search" placeholder="Search">
+	  </label>
+	  <button class="button button-clear">
+	    Cancel
+	  </button>
+      </div>
+    </ion-content>
+    </ion-view>
+  </ion-tab>
+  
+  <ion-tab title="Contact Us">
+    <ion-view>
+    <ion-content overflow-scroll="true">
+      <h1>helo </h1> 
+    </ion-content>
+    </ion-view>
+  </ion-tab>
+
+</ion-tabs>
+  
+  </ion-pane>
+     
+</ion-view>

@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('FilterLady', ['ionic', 'ngCordova', 'Main.Controllers'])
+angular.module('FilterLady', ['ionic', 'ngCordova', 'Main.Controllers', 'Data.factory'])
 
 .run(function($ionicPlatform, $cordovaDevice) {
   $ionicPlatform.ready(function() {
@@ -50,6 +50,15 @@ angular.module('FilterLady', ['ionic', 'ngCordova', 'Main.Controllers'])
         }
       }
     })
+    .state('app.microsite', {
+      url: '/microsite',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/microsite.html',
+          controller: 'MicroSite'
+        }
+      }
+    })
     .state('app.subcategory', {
       url: '/subcategory?maincategory',
       views: {
@@ -59,6 +68,17 @@ angular.module('FilterLady', ['ionic', 'ngCordova', 'Main.Controllers'])
         }
       }
     })
+    
+    .state('app.productregister', {
+      url: '/productregister',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/registerproduct.html',
+          controller: 'RegisterProduct'
+        }
+      }
+    })
+    
     .state('app.myprofile', {
       url: '/myprofile',
       views: {
@@ -83,6 +103,15 @@ angular.module('FilterLady', ['ionic', 'ngCordova', 'Main.Controllers'])
         'menuContent': {
           templateUrl: 'templates/settings.html',
           controller: 'Settings'
+        }
+      }
+    })
+    .state('app.faq', {
+      url: '/faq',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/faq.html',
+          controller: 'Faq'
         }
       }
     })

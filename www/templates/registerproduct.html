@@ -1,0 +1,80 @@
+<ion-view view-title="Register">
+  <ion-content has-header="true" style="background-image:url('img/white-wood.jpg');"> 
+       <div class="item" style="border-width: 3px; border-style: dashed; border-color: black;">
+       <center><h2><b>Capture or add Photos</b></h2></center>
+       <ion-scroll direction="x" style="height:125px;">
+       <span class="inline" collection-repeat="img in images">
+	<img ng-src="{{img}}" style="height:100px; width:100px; border-radius: 15px;" class="block">
+	<img ng-src="img/remove.png" style="height:20px; width:100px; border-radius: 25px;" ng-click="removeimage({{$index}})"></i>
+       &nbsp;
+       </span>
+       
+       <span ng-if="images.length<5">
+	<img src="img/camera-plus.png" ng-click="openPopover($event)" height=100px width=100px style="margin-bottom: 1.25em;">
+	</span>
+    </ion-scroll>
+    <center>Added {{images.length}} of 5 photos</center>
+    </div>
+       <form ng-model="form1">
+                <div class="list">
+                    <label class="item item-input">
+                        <span class="input-label">Product Name</span>
+                        <input type="text" ng-model="product.name" placeholder="Canon Digital Camera">
+                    </label>
+                    <label class="item item-input item-select">
+                        <span class="input-label">Category</span>
+                        <select ng-model='product.category' placeholder="Category">
+			  <option>Electronics</option>
+			  <option>Books</option>
+			  <option>Antiques</option>
+			  <option>Gaming</option>
+			  <option>Household Items</option>
+			  <option>Music</option>
+			  <option>Sports</option>
+			  <option>Other</option>
+			  <option>Trips and Trek</option>
+			</select>
+                    </label>
+                    <label class="item item-input">
+                        <span class="input-label">Description</span>
+                        <input type="text" ng-model="product.description" placeholder="13 Megapixel Camera Model D550...">
+                    </label>
+                    <label class="item item-input">
+                        <span class="input-label">Actual Price (in Rupee)</span>
+                        <input type="number" ng-model="product.actualprice" placeholder="13000">
+                    </label>
+                    <label class="item item-input">
+                     <span class="input-label">Day Rent (in Rupee)</span>
+                        <input type="number" ng-model="product.dayrent" ng-placeholder="E.g 1% to 2% of M.R.P" ng-change="priceChange()">
+                    </label>
+                    <label class="item item-input">
+                        <span class="input-label">Hour Rent (in Rupee)</span>
+                        <input type="number" ng-model="product.hourrent" placeholder="{{hourrenttip}}">
+                    </label>
+                    
+                    <label class="item item-input">
+                        <span class="input-label">Week Rent (in Rupee)</span>
+                        <input type="number" ng-model="product.weekrent" placeholder="{{weekrenttip}}">
+                    </label>
+                    <ion-checkbox ng-model="agreement"><span class="input-label">Accept all the terms and conditions.*</span></ion-checkbox>
+                    <label class="item">
+                        <button class="button button-block button-assertive" ng-click="register()" ng-disabled="!product.name || !product.category || !product.description || !product.actualprice || !product.dayrent || !product.weekrent || !product.hourrent || !agreement || !images.length" type="submit" type="submit">Register</button>
+                    </label>
+                </div>
+            </form>
+      </ion-content>
+</ion-view>
+<script id="my-popover.html" type="text/ng-template">
+  <ion-popover-view style="height:19%;">
+  <ion-content>
+  <div class="item item-icon-left" ng-click="optionClicked(1)">
+	<i class="icon ion-images"></i>
+	Select from Gallery
+  </div>
+  <div class="item item-icon-left" ng-click="optionClicked(2)">
+    <i class="icon ion-ios-camera-outline"></i>
+    Take a Picture
+  </div>
+  </ion-content>
+  </ion-popover-view>
+</script>
